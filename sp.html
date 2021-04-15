@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js" integrity="sha256-OVk2fwTRcXYlVFxr/ECXsakqelJbOg5WCj1dXSIb+nU=" crossorigin="anonymous"></script>
+        <script src="sp.js"></script>
+        <style>
+            #sp {
+                font-size: 100pt;
+            }
+        </style>
+    </head>
+    <body>
+        <p>It is currently settlement period<br><span id="sp">?</span></p>
+        <script>
+            function sp(t) {
+                let midnight = t.set({hour:0, minute:0, second:0, millisecond:0});
+                let duration = luxon.Interval.fromDateTimes(midnight, t).length("minutes");
+                return Math.floor(Math.floor(duration) / 30) + 1;
+            }
+
+            setInterval(function() {
+                document.querySelector("#sp").innerHTML = sp(luxon.DateTime.local().setZone("Europe/London"));
+            }, 1000);
+        </script>
+        </body>
+</html>
