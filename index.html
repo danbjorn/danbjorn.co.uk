@@ -2,16 +2,25 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-            body {
-                background-image: url('IMG_5983_bw.webp');
-                background-size: 100%;
+            body, html {
+                min-height: 100%;
+                margin: 0;
             }
-            div {
+            .bg {
+                background-image: url('IMG_5983_bw.webp');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: left center;
+                height: 100%;
+            }
+            .content {
                 width: 40%;
                 float: left;
                 margin-left: 10em;
                 margin-top: 11em;
+                margin-bottom: 2em;
                 padding: 2em;
                 background-color: rgba(255, 255, 255, 0.5);
                 border-radius: 10px;
@@ -22,17 +31,24 @@
             p {
                 font-size: 2em;
             }
-            @media screen and (max-width: 1500px) {
-                div {
-                    width: 70%;
+            @media screen and (max-width: 1152px) {
+                .bg {
+                    background-position: center;
+                }
+                .content {
+                    width: 45%;
+                    margin-left: 5em;
+                    margin-top: 5em;
                 }
             }
-            @media screen and (max-width: 1000px) {
-                div {
-                    width: 95%;
+            @media screen and (max-width: 1024px) {
+                .bg {
+                    height: 100%;
+                    background-position: right center;
                 }
+                .content {
+                    width: 40%;
             }
-            @media screen and (max-width: 700px) {
                 h1 {
                     font-size: 2.5em;
                 }
@@ -42,8 +58,8 @@
             }
         </style>
     </head>
-    <body>
-        <div>
+    <body class="bg">
+        <div class="content">
             <h1>Hi. I'm Dan.</h1>
             <p>
                 I'm a Python developer based in West Sussex. Currently I'm working with
