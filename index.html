@@ -15,6 +15,9 @@
                 background-position: left center;
                 height: 100%;
             }
+            .bubble {
+                display: none;
+            }
             .content {
                 width: 40%;
                 float: left;
@@ -56,9 +59,34 @@
                     font-size: 1.5em;
                 }
             }
+            @media screen and (max-width: 500px) {
+                .bg {
+                    height: 100%;
+                    background-position: left bottom;
+                    margin-top: 6em;
+                }
+                .bubble {
+                    display: block;
+                    width: 30%;
+                    border-radius: 50%;
+                    margin: 2em auto;
+                }
+                .content {
+                    width: auto;
+                    margin: -4em 2em 2em 2em;
+                    background-color: rgba(255, 255, 255, 0.8);
+                }
+                h1 {
+                    font-size: 1.2em;
+                }
+                p {
+                    font-size: 1em;
+                }
+            }
         </style>
     </head>
     <body class="bg">
+        <img class="bubble" src="2021-dan-profile.png">
         <div class="content">
             <h1>Hi. I'm Dan.</h1>
             <p>
